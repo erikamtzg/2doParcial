@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diferencia de Horas</title>
+    <script type="text/javascript">
+    	alert("Cálculo de diferencia de horas");
+    	var t1 = prompt("Ingrese la primera hora en formato HH:MM:SS").split(":");
+    	var t2 = prompt("Ingrese la segunda hora en formato HH:MM:SS").split(":");
+		var h1= +t1[0], m1= +t1[1], s1= +t1[2];
+       	var h2= +t2[0], m2= +t2[1], s2= +t2[2];
+        var h3= 0, m3=0, s3=0;
+        var temp;
+        if(h1>h2){
+		    temp=h2;
+	    	h2=h1;
+		    h1=temp;
+		    temp=m2;
+		    m2=m1;
+		    m1=temp;
+		    temp=s2;
+		    s2=s1;
+		    s1=temp;
+		}else if(h1>=h2){
+	       	if( (m1>=m2 && s1>=s2) || m1>m2){
+			    temp=h2;
+			    h2=h1;
+			    h1=temp;
+			    temp=m2;
+			    m2=m1;
+			    m1=temp;
+			    temp=s2;
+			    s2=s1;
+			    s1=temp;
+	        }			
+		}
+        if(s2>=s1){
+        	s3=s2-s1;
+        }else{
+        	s3=60-s1+s2;
+        	m3-=1;
+        }
+        if(m2>=m1){
+        	m3=m2-m1;
+        }else{
+        	m3+=60-m1+m2;
+        	h3-=1;
+        }
+        h3+=h2-h1;
+        if(s3==1 && m3==1 && h3==1){
+        alert(h3 + ' hora, ' + m3 + ' minuto y ' + s3 + ' segundo.');      	
+        }else if(s3==1 && m3==1){
+        alert(h3 + ' horas, ' + m3 + ' minuto y ' + s3 + ' segundo.');
+        }else if(m3==1 && h3==1){
+        alert(h3 + ' hora, ' + m3 + ' minuto y ' + s3 + ' segundos.');
+        }else if(s3==1){
+        alert(h3 + ' horas, ' + m3 + ' minutos y ' + s3 + ' segundo.');
+        }else if(m3==1){
+        alert(h3 + ' horas, ' + m3 + ' minuto y ' + s3 + ' segundos.');
+        }else if(h3==1){
+        alert(h3 + ' hora, ' + m3 + ' minutos y ' + s3 + ' segundos.');
+        }else{
+        alert(h3 + ' horas, ' + m3 + ' minutos y ' + s3 + ' segundos.');  	
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>
